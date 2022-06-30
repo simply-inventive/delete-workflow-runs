@@ -87,7 +87,7 @@ async function run() {
           core.debug(`Deleting '${workflow.name}' workflow run ${del.id}`);
           // Execute the API "Delete a workflow run", see 'https://octokit.github.io/rest.js/v18#actions-delete-workflow-run'
 
-          if (dry_run) {
+          if (dry_run === "true" || dry_run === 1 || dry_run == true) {
             console.log(`[dry-run] 🚀 Delete run ${del.id} of '${workflow.name}' workflow`);
             continue;
           }
